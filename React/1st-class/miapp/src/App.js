@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from "./logo.svg";
+import ReactDOM from "react-dom/client";
+import "./App.css";
 
 function App() {
-  return (
+  let localtime = new Date();
+  let UTC = localtime.getTime() + localtime.getTimezoneOffset();
+  let horaUSAW = new Date(UTC + 3600000 * -2);
+  let horaUSAE = new Date(UTC + 3600000);
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  const element = (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>The time in:</h1>
+        <h2>Mexico (Center): {new Date().toLocaleTimeString("es-Mx")}</h2>
+        <h2>USA (West cost): {horaUSAW.toLocaleTimeString("es-Mx")}</h2>
+        <h2>USA (East cost): {horaUSAE.toLocaleTimeString("es-Mx")}</h2>
       </header>
     </div>
   );
+
+  root.render(element);
 }
 
 export default App;
