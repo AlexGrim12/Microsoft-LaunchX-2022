@@ -1,16 +1,65 @@
-html{
-    background-color: #141414;
-    color: #fff;
-    height: 100%;
-    display: flex;
+html {
+  background-color: #141414;
+  color: #fff;
+  height: 100%;
+  display: flex;
 }
-body{
-    width: 100%;
-    margin: auto;
+body {
+  width: 100%;
+  margin: auto;
 }
-.App{
-    font-family: 'montserrat', sans-serif;
-    text-align: center;
-    font-size: 30px;
-    text-shadow: #fff 0px 0px 5px;
+.App {
+  font-family: "montserrat", sans-serif;
+  text-align: center;
+  font-size: 30px;
+  text-shadow: #fff 0px 0px 5px;
 }
+
+.todo-list {
+  background: #ffffff09;
+  font-size: 18px;
+  max-width: 300px;
+  margin: auto;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  box-shadow: #ffffff1a 0px 2px 5px;
+}
+
+$color: #ffffff1a;
+$colorHover: #ffffff27;
+
+@mixin button($class, $color, $colorHover) {
+  .button.#{$class} {
+    background: $color;
+  }
+  .button.#{$class}:hover {
+    background: $colorHover;
+  }
+  .button.#{$class}:active {
+    background: $color;
+  }
+}
+
+.button {
+  outline: none;
+  padding: 3px 16px;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+.text {
+  outline: none;
+  padding: 3px 16px;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  background: #ffffff09;
+  font-size: 18px;
+  max-width: 300px;
+  margin: auto;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  box-shadow: #ffffff1a 0px 2px 5px;
+  text-align: center;
+}
+@include button("withe", $color, $colorHover);
